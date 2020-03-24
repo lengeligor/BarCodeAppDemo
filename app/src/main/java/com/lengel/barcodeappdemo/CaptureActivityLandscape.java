@@ -1,17 +1,19 @@
 package com.lengel.barcodeappdemo;
 
+import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
-import com.journeyapps.barcodescanner.CaptureActivity;
 import com.journeyapps.barcodescanner.CaptureManager;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
-public class CaptureActivityPortrait extends CaptureActivity implements DecoratedBarcodeView.TorchListener {
+public class CaptureActivityLandscape extends Activity implements DecoratedBarcodeView.TorchListener{
 
     private CaptureManager capture;
     private DecoratedBarcodeView barcodeScannerView;
@@ -20,13 +22,13 @@ public class CaptureActivityPortrait extends CaptureActivity implements Decorate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.custom_scanner_layout);
+        setContentView(R.layout.custom_scanner_layout_landscape);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        barcodeScannerView = (DecoratedBarcodeView)findViewById(R.id.zxing_barcode_scanner);
+        barcodeScannerView = (DecoratedBarcodeView)findViewById(R.id.zxing_barcode_scanner_land);
         barcodeScannerView.setTorchListener(this);
 
-        switchFlashlightButton = findViewById(R.id.onOffFlashlight);
+        switchFlashlightButton = findViewById(R.id.onOffFlashlight_land);
 
         // if the device does not have flashlight in its camera,
         // then remove the switch flashlight button...

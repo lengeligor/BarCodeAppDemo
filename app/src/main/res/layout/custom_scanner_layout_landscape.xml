@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.lengel.barcodeappdemo.CaptureActivityLandscape">
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/zxing_barcode_scanner_land"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+    </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/onOffFlashlight_land"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="Turn Off"
+            android:textOff="Turn On"
+            android:checked="false"
+            android:text="Turn On/Off Camera LED/ Flashlight Android" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
